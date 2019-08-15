@@ -1,26 +1,50 @@
 /**
  * SYST 17796 Project Winter 2019 Base code.
  * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
+ * Modifier: Amitpal Chahal
  */
 package ca.sheridancollege.project;
 
-/**
- * A class to be used as the base Card class for the project. Must be general
- * enough to be instantiated for any Card game. Students wishing to add to the code 
- * should remember to add themselves as a modifier.
- * @author dancye, 2018
- */
-public abstract class Card 
-{
-    //default modifier for child classes
+
+public class Card {
+
+    public enum Suit {Spade, Club, Hearts, diamond};//suit
     
-    /**
-     * Students should implement this method for their specific children classes 
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
     
-    @Override
-    public abstract String toString();
+    public enum Value {One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King};//cards.....One added instead of ace
     
+    
+    private Value value = null;
+    
+    
+    private Suit suit = null;
+
+    public Card() {
+
+    }
+
+    
+    public Card(Suit s, Value gVal) {
+        
+        setSuit(s);
+        
+        setValue(gVal);
+    }
+//-----------------Getters-----------------
+    public Value getValue() {
+        return this.value;
+    }
+
+    public Suit getSuit() {
+        return this.suit;
+    }
+//--------------Setters---------------------
+    public void setValue(Value value) {
+        this.value = value;
+    }
+
+    public void setSuit(Suit suit) {
+        this.suit = suit;
+    }
+
 }
